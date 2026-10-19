@@ -1,36 +1,55 @@
-// This file was generated from a template. Edit it to match your keyboard.
-// See https://zmk.dev/docs/development/hardware-integration/new-shield for more instructions.
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
 / {
-    // Define a default keymap here.
-    // See https://zmk.dev/docs/development/hardware-integration/new-shield#default-keymap.
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-                /* R4 - 14 touches */
-                &none &none &none &none &none &none &none
-                &none &none &none &none &none &none &none
+                // R4 : S64 à S51
+                &kp ESC   &kp N1    &kp N2    &kp N3    &kp N4    &kp N5    &kp N6
+                &kp N7    &kp N8    &kp N9    &kp N0    &kp MINUS &kp EQUAL &kp BSPC
 
-                /* R3 - 14 touches */
-                &none &none &none &none &none &none &none
-                &none &none &none &none &none &none &none
+                // R3 : S50 à S37
+                &kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T     &kp Y
+                &kp U     &kp I     &kp O     &kp P     &kp LBKT  &kp RBKT  &kp NUBS
 
-                /* R2 - 13 touches */
-                &none &none &none &none &none &none &none
-                &none &none &none &none &none &none
+                // R2 : S36 à S24
+                &kp CAPS  &kp A     &kp S     &kp D     &kp F     &kp G     &kp H
+                &kp J     &kp K     &kp L     &kp SEMI  &kp APOS  &kp RET
 
-                /* R1 - 14 touches */
-                &none &none &none &none &none &none &none
-                &none &none &none &none &none &none &none
+                // R1 : S23 à S10
+                &kp LSHFT &kp Z     &kp X     &kp C     &kp V     &kp B     &kp N
+                &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT &kp UP    &kp DEL
 
-                /* R0 - 9 touches */
-                &none &none &none &none &none &none &none
-                &none &none
+                // R0 : S09 à S01
+                &kp LCTRL &kp LGUI  &kp LALT  &kp SPACE &kp RALT  &mo 1
+                &kp LEFT  &kp DOWN  &kp RIGHT
+            >;
+        };
+
+        fn_layer {
+            bindings = <
+                // R4 : F1 à F12
+                &trans &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6
+                &kp F7 &kp F8  &kp F9  &kp F10 &kp F11 &kp F12 &trans
+
+                // R3
+                &trans &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans
+
+                // R2
+                &trans &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans
+
+                // R1
+                &trans &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans
+
+                // R0
+                &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans
             >;
         };
     };
